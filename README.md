@@ -1,27 +1,36 @@
-# Quick Till Point of Sale
+# School Payment Management System
 
-![POS](screenshots/quicktill_pos.png)
+![School Payment System](screenshots/quicktill_pos.png)
 
-Desktop Point of Sale app built with electron
+Desktop School Payment Management System built with Electron
 
 **Features:**
 
-- Can be used by multiple PC's on a network with one central database.
+- Multi-PC network support with centralized database
 - Receipt Printing.
-- Search for product by barcode.
+- Student database management
+- Payment category management (compulsory/optional)
+- Student payment recording and tracking
+- Outstanding balance monitoring
 - Staff accounts and permissions.
-- Products and Categories.
-- Basic Stock Management.
-- Open Tabs (Orders).
-- Customer Database.
-- Transaction History.
-- Filter Transactions by Till, Cashier or Status.
-- Filter Transactions by Date Range.
-- Generate & print barcodes for each product
+- Comprehensive reporting system
+- Search functionality for students and payments
+- Date range filtering for transactions
+- Export capabilities (Excel, PDF, Print)
+- Student ID barcode generation
 
 ## Development
 
-Quicktill is an offline-first application built on jQuery, Node, and Electron. It utilizes a local NeDB as the database by default.
+The School Payment Management System is an offline-first application built on jQuery, Node.js, and Electron. It utilizes local NeDB databases by default.
+
+### Database Schema
+
+The system uses the following main databases:
+- `students.db` - Student information and enrollment data
+- `payment_categories.db` - Payment types (compulsory/optional)
+- `student_payments.db` - Payment records and transactions
+- `users.db` - Staff accounts and permissions (existing)
+- `settings.db` - School configuration settings (existing)
 
 ### Pre-requisites
 
@@ -38,10 +47,10 @@ setup Quicktill for development and building:
 
 ```bash
 # clone the repository
-git clone https://github.com/Ayuen-madyt/Quicktill.git
+git clone https://github.com/Ayuen-madyt/School-Payment-System.git
 
 # change directory
-cd Quicktill
+cd School-Payment-System
 
 # install dependencies
 yarn
@@ -49,7 +58,7 @@ yarn
 
 #### Development
 
-To run Quicktill in development mode:
+To run the School Payment System in development mode:
 
 ```bash
 # start the electron app
@@ -58,7 +67,7 @@ yarn electron
 
 #### Build
 
-To build Quicktill and create an installer:
+To build the School Payment System and create an installer:
 
 ```bash
 # start the electron app
@@ -73,7 +82,7 @@ computer) check the _Building_ section at
 
 ### Project Contribution Guidelines
 
-Thank you for your interest in contributing to Quicktill POS! This document outlines the guidelines for contributing to our repository. Please take a moment to read through this guide before making any contributions. By following these guidelines, you will help us maintain a high-quality codebase and ensure a smooth contribution process.
+Thank you for your interest in contributing to the School Payment Management System! This document outlines the guidelines for contributing to our repository. Please take a moment to read through this guide before making any contributions. By following these guidelines, you will help us maintain a high-quality codebase and ensure a smooth contribution process.
 
 ### Branching
 
@@ -86,7 +95,7 @@ Thank you for your interest in contributing to Quicktill POS! This document outl
 - Fork the repository first.
 - Familiarize yourself with the project's technology stack, including jQuery, Node, and Electron.
 - Make your code changes, following the existing coding style and conventions.
-- Test your changes thoroughly, ensuring they work seamlessly with Quicktill's offline functionality.
+- Test your changes thoroughly, ensuring they work seamlessly with the system's offline functionality.
 - Commit your changes with a clear and descriptive commit message.
 - Push your changes to your forked repository.
 - Open a pull request (PR) from your branch to the master branch of the main repository.

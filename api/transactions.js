@@ -98,6 +98,19 @@ app.get("/by-date", function(req, res) {
 
 app.post("/new", function(req, res) {
   let newTransaction = req.body;
+  
+  // Handle school payment transactions
+  if (newTransaction.transaction_type === 'school_payment') {
+    // For school payments, we don't need to decrement inventory
+    transactionsDB.insert(newTransaction, function(err, transaction) {
+      if (err) {
+        return res.status(500).send(err);
+      }
+      res.status(200).send("School payment transaction created successfully.");
+    });
+    return;
+  }
+  
   transactionsDB.insert(newTransaction, function(err, transaction) {    
     if (err) {
       return res.status(500).send(err);
